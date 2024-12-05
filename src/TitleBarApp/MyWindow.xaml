@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Window
+    x:Class="TitleBarApp.MyWindow"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vw="clr-namespace:TitleBarApp.Views"
+    mc:Ignorable="d">
+    <Window.Page>
+        <vw:MainPage />
+    </Window.Page>
+    <Window.TitleBar>
+        <TitleBar
+            Title="MyApp"
+            BackgroundColor="{StaticResource Primary}"
+            ForegroundColor="{StaticResource White}"
+            HeightRequest="48"
+            Icon="dotnet_bot.png"
+            Subtitle="Home">
+            <!-- Customized Title and Subtitle -->
+            <TitleBar.LeadingContent>
+                <HorizontalStackLayout
+                    Margin="20,0,0,0"
+                    VerticalOptions="Center">
+                    <Label
+                        Style="{StaticResource AppTitle}"
+                        Text="MyApp" />
+                    <Label
+                        Style="{StaticResource Title}"
+                        Text="Home" />
+                </HorizontalStackLayout>
+            </TitleBar.LeadingContent>
+            <TitleBar.Content>
+                <SearchBar
+                    BackgroundColor="{StaticResource White}"
+                    HorizontalOptions="Fill"
+                    MaximumWidthRequest="300"
+                    Placeholder="Search"
+                    VerticalOptions="Center" />
+            </TitleBar.Content>
+            <TitleBar.TrailingContent>
+                <ImageButton
+                    Background="Transparent"
+                    BorderWidth="0"
+                    HeightRequest="36"
+                    WidthRequest="36">
+                    <ImageButton.Source>
+                        <FontImageSource
+                            FontFamily="FAS"
+                            Glyph="&#xf013;"
+                            Size="18" />
+                    </ImageButton.Source>
+                </ImageButton>
+            </TitleBar.TrailingContent>
+        </TitleBar>
+    </Window.TitleBar>
+</Window>
